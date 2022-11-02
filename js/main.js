@@ -19,3 +19,13 @@ images.forEach(img => {
 });
 
 cardBoard.innerHTML = cardHTML + cardHTML;
+
+//Animação com a class flip
+const cards = document.querySelectorAll(".container__card");
+
+function flipCard(){
+    this.classList.add("flip");
+    console.log(this);
+}
+
+cards.forEach(card => card.addEventListener("click", flipCard));
