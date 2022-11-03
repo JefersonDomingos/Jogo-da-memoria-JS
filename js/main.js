@@ -22,14 +22,13 @@ cardBoard.innerHTML = cardHTML + cardHTML;
 
 let firstCard;
 let secondCard;
-let lookCard = false;
+let selectedTwoCards = false;
 
 //Animação com a class flip
 const cards = document.querySelectorAll(".container__card");
 
 function flipCard(){
-    if(lookCard)
-
+    if(selectedTwoCards) return false;
     this.classList.add("flip");
 
     //definição das cartas;
@@ -50,17 +49,26 @@ cards.forEach(card => card.addEventListener("click", flipCard));
 function checkForMatch (){
     let isMatch = firstCard.dataset.name === secondCard.dataset.name;
     
-    isMatch? true : differentCards();
+    !isMatch? differentCards() : keepPlaying(isMatch);
 }
 
 function differentCards(){
+    selectedTwoCards = true;
     console.log("não são iguais");
-    
+
     setTimeout(()=>{
         firstCard.classList.remove("flip");
         secondCard.classList.remove("flip");
+        keepPlaying();
     },1000);
     
 }
 
+function keepPlaying(isMatch = false){
+    if(isMatch){
+        firstCard.removeEventListener("click",flipCard);
+        secondCard.removeEventListener("click",flipCard);
+    }
+    [firstCard, secondCard, selectedTwoCards] = [null, null, false];
+}
 
