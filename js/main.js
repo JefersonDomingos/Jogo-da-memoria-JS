@@ -1,12 +1,12 @@
 const cardBoard = document.querySelector(".container");
 const restartButton = document.querySelector(".restart-button");
 const images = [
-    "angular.svg",
-    "aurelia.svg",
-    "backbone.svg",
-    "ember.svg",
-    "react.svg",
-    "vue.svg"
+    "argentina.svg",
+    "belgica.svg",
+    "brasil.svg",
+    "qatar.svg",
+    "frança.svg",
+    "senegal.svg"
 ];
 
 
@@ -15,7 +15,7 @@ images.forEach(img => {
     cardHTML +=`
     <div class="container__card" data-name="${img}">
         <img class="front-face" src="IMG/${img}">
-        <img class="back-face" src="IMG/js-badge.svg">
+        <img class="back-face" src="IMG/qatar2022.svg">
     </div>`
 });
 
