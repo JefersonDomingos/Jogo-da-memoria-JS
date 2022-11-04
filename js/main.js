@@ -1,4 +1,5 @@
 const cardBoard = document.querySelector(".container");
+const restartButton = document.querySelector(".restart-button");
 const images = [
     "angular.svg",
     "aurelia.svg",
@@ -49,7 +50,7 @@ cards.forEach(card => card.addEventListener("click", flipCard));
 function checkForMatch (){
     let isMatch = firstCard.dataset.name === secondCard.dataset.name;
     
-    !isMatch? differentCards() : keepPlaying(isMatch);
+    !isMatch ? differentCards() : keepPlaying(isMatch);
 }
 
 function differentCards(){
@@ -71,4 +72,18 @@ function keepPlaying(isMatch = false){
     }
     [firstCard, secondCard, selectedTwoCards] = [null, null, false];
 }
+
+//Embaralhar as 12 cartas, função autoexecutavel.
+(function shuffle (){
+    cards.forEach(card => {
+        let random = Math.floor(Math.random() * 12);
+        card.style.order = random;
+    })
+})();
+
+restartButton.addEventListener("click", restartGame);
+
+function restartGame(){
+    window.location.reload();
+} 
 
