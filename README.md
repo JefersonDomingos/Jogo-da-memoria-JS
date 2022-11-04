@@ -16,11 +16,8 @@ Um projeto de um jogo bastante conhecido e desafiador que tem como principal obj
 !["Desktop"](https://github.com/JefersonDomingos/Jogo-da-memoria-JS/blob/master/IMG/layout%20desktop.png)
 
 
-## você pode testar o projeto, acesse o link abaixo
-
-
-## Link
-
+## Link para rodar o projeto:
+https://jefersondomingos.github.io/Jogo-da-memoria-JS/
 
 ## Autor
  Jeferson Domingos Martins
