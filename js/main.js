@@ -30,7 +30,7 @@ const cards = document.querySelectorAll(".container__card");
 function flipCard(){
     if(selectedTwoCards) return false;
     this.classList.add("flip");
-
+    
     //definição das cartas;
     if(!firstCard){
         firstCard = this;

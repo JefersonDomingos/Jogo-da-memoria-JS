@@ -23,17 +23,19 @@ body{
     height:calc(33% - 10px);
     margin:.3em;
     position:relative;
+    backface-visibility: hidden; /*deixar a parte de trás do elemento invisível*/
+    transform-style: preserve-3d;/*elementos filhos preservam a parte de trás visível*/
 }
 
 .container__card:active{
-    transform: scale(0.90);
+   transform: scale(0.90);
 }
 
-.container__card.flip{ /*duas classes do mesmo item por isso não pode dar espaço aqui no CSS*/
+.container__card.flip {
     transform: rotateY(180deg);
-    backface-visibility: hidden; /*não mostrar a parte de trás desse mesmo elemento que girou*/
     transition: 0.3s;
 }
+
 
 .front-face,
 .back-face{
@@ -48,4 +50,5 @@ body{
 .front-face{
     transform: rotateY(180deg);
 }
+
 
